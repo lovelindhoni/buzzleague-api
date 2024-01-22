@@ -71,6 +71,7 @@ app.get("/", async (_, res) => {
   const browser = await puppeteer.launch({
     headless: "new",
     args: minimal_args,
+    userDataDir : './temp'
   }); // Launching chrome in new headless mode
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 720 });
